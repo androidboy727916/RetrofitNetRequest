@@ -1,0 +1,14 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="statusbar_view_height">0dp</dimen>
+
+    <dimen name="sp11">11sp</dimen>
+    <dimen name="sp12">12sp</dimen>
+    <dimen name="sp13">13sp</dimen>
+    <dimen name="sp15">15sp</dimen>
+    <dimen name="sp16">16sp</dimen>
+    <dimen name="sp17">17sp</dimen>
+    <dimen name="dp_15">15dp</dimen>
+    <dimen name="dp_5">5dp</dimen>
+    <dimen name="dp_half">0.5dp</dimen>
+</resources>

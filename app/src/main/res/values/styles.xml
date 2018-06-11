@@ -1,0 +1,66 @@
+<resources>
+
+    <style name="Widget.App.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:gravity">center_vertical</item>
+        <item name="contentInsetStart">0dp</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+    </style>
+    <!--Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--   &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+    </style>
+    <!--  <style name="StartAppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+    <style name="StartAppTheme" parent="android:Theme.Light">
+        <!--<item name="android:windowBackground">@drawable/openscreen</item>-->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <!-- 去标题、去边框、透明背景对话框 -->
+    <style name="NoTitleDialog" parent="@android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="tv_orange_12">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/color_ff7901</item>
+    </style>
+    <style name="tv_orange_14">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/color_ff7901</item>
+    </style>
+    <style name="tv_c666_12">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/color_666</item>
+    </style>
+    <style name="tv_c666_14">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/color_666</item>
+    </style>
+    <style name="tv_c323232_22">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/color_323232</item>
+    </style>
+    <style name="tv_cffff_14">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/color_9f9ea4</item>
+        <!--<item name="android:background">@drawable/setting_already</item>-->
+    </style>
+
+
+</resources>

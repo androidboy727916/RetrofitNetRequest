@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">网络</string>
+    <string name="app_exit">再次点击退出app</string>
+    <string name="app_sure">确定</string>
+    <string name="app_cancel">取消</string>
+    <string name="app_jump">跳过</string>
+    <string name="app_correct">正确</string>
+    <string name="app_error">错误</string>
+    <string name="app_login">登录</string>
+    <string name="tab_home">首页</string>
+    <string name="tab_study">学习</string>
+    <string name="tab_mine">我的</string>
+    <string name="app_not">暂无</string>
+    <string name="reterror_error">"未知错误"</string>
+    <string name="error_net">没有网络连接</string>
+    <string name="reterror_network_java_net_error">"当前网络无法正常使用，请查看您的网络连接方式"</string>
+    <string name="edittext_limit_password">0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_</string>
+    <string name="app_save">保存</string>
+    <string name="app_reminder">提示</string>
+    <string name="goto_setting">设置</string>
+    <string name="permiss_camera">该功能需要您的摄像头权限，否则无法使用</string>
+    <string name="permiss_content">该功能需要您的存储权限，否则无法使用</string>
+    <string name="phone_true">请输入正确的手机号码</string>
+    <string name="login_sendcode">发送验证码</string>
+    <string name="login_input_phone">请输入手机号</string>
+    <string name="login_verify_countdown">"%ds后可重发"</string>
+    <string name="code_true">请输入正确的验证码</string>
+    <string name="name_true">请输入正确的姓名</string>
+    <string name="psw_notnull">密码不可为空</string>
+    <string name="psw_same">两次输入的密码不一致</string>
+    <string name="psw_true">请输入正确的密码格式</string>
+    <string name="user_agreement">查看并同意用户协议可以继续</string>
+    <string name="phone_change">手机号发生了变化</string>
+    <string name="app_exitapp_sure">您确认退出该账号吗？</string>
+    <string name="app_logoutapp_sure">注销账号后会清空所有账号内容，包括角色与圈子，确定要注销吗？</string>
+    <string name="cache_cleaned">缓存清理成功</string>
+    <string name="chche_no">没有缓存</string>
+    <string name="errcode_success">发送成功</string>
+    <string name="errcode_cancel">发送取消</string>
+    <string name="errcode_deny">发送被拒绝</string>
+    <string name="errcode_unsupported">不支持错误</string>
+    <string name="errcode_unknown">发送返回</string>
+
+    <array name="array_pic">
+        <item>拍照</item>
+        <item>相册</item>
+    </array>
+</resources>
