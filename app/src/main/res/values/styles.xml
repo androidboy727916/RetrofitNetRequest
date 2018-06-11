@@ -20,7 +20,7 @@
         <item name="windowActionBar">false</item>
     </style>
     <!--  <style name="StartAppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
-    <style name="StartAppTheme" parent="android:Theme.Light">
+    <style name="StartAppTheme" parent="Theme.AppCompat.Light">
         <!--<item name="android:windowBackground">@drawable/openscreen</item>-->
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
