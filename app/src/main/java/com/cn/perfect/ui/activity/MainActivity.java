@@ -58,6 +58,7 @@ public class MainActivity extends BaseActivity {
      */
     private void requestLogin() {
         LoginRequestBean requestBean = new LoginRequestBean(202, et_name.getText().toString().trim(), et_psw.getText().toString().trim());
+        //TODO 是否应该专门放到一个类里面执行
         restAPI.requestPostBase(requestBean, baseCallBack.getCallBack(202, LoginResponseBean.class, true, this));
     }
 
