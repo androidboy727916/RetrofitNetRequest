@@ -63,6 +63,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
         setStatusBar();
         mUnBinder = ButterKnife.bind(this);
+        //TODO 能不能用单例？？
         restAPI = RestAdapterUtils.getRestAPI(BaseAPI.class);
         initView(savedInstanceState);
     }
