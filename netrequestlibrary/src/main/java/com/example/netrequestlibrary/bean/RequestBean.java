@@ -1,16 +1,14 @@
 package com.example.netrequestlibrary.bean;
 
 public class RequestBean extends BaseRequestBean{
-    private int actId;
+
     private String mobile;
     private String password;
 
-    public int getActId() {
-        return actId;
-    }
-
-    public void setActId(int actId) {
-        this.actId = actId;
+    public RequestBean(int actId, String mobile, String password) {
+      setActId(actId);
+      setMobile(mobile);
+      setPassword(password);
     }
 
     public String getMobile() {

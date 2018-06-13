@@ -1,14 +1,13 @@
 package com.example.netrequestlibrary.net;
 
 
+import android.app.Activity;
+
 import com.example.netrequestlibrary.Constants;
 import com.example.netrequestlibrary.bean.RequestBean;
 import com.example.netrequestlibrary.bean.ResultStatusBean;
 import com.example.netrequestlibrary.bean.UserBean;
 
-import java.io.File;
-
-import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import retrofit2.Retrofit;
 import rx.Observable;
@@ -44,12 +43,12 @@ public class RtRequestHepler {
         return mRequest;
     }
 
-    /**
-     * 登录
-     */
-    public synchronized void setUserLoginHepler(RequestBean requestBean, RtResultCallbackListener callbackListener) {
-        getRxAndroidConfig(requestApi.getUstLoginState(requestBean), new ProgressSubscriber<ResultStatusBean<UserBean>>(callbackListener, requestBean.getHttpFlag()));
-    }
+//    /**
+//     * 登录
+//     */
+//    public synchronized void setUserLoginHepler(RequestBean requestBean, RtResultCallbackListener callbackListener) {
+//        getRxAndroidConfig(requestApi.getUstLoginState(requestBean), new ProgressSubscriber<ResultStatusBean<UserBean>>(callbackListener, requestBean.getHttpFlag()));
+//    }
 
 
     private RequestBody setmRequest(String jsonStar) {
@@ -57,7 +56,10 @@ public class RtRequestHepler {
         return body;
     }
 
-    public <T> void getRxAndroidConfig(Observable<T> observable, Subscriber<T> subscriber) {
+    public <T> void getRxAndroidConfig(Activity activity, boolean isShowLoading, Observable<T> observable, Subscriber<T> subscriber) {
+        if (isShowLoading) {
+//           TODO  展示loading
+        }
         observable.subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

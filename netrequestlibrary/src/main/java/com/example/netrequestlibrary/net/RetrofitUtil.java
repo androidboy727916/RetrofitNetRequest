@@ -25,7 +25,6 @@ public class RetrofitUtil {
             mHttpClient = new OkHttpClient.Builder().addNetworkInterceptor(new LoggerInterceptor("RetrofitHttp", true)).connectTimeout(10000L, TimeUnit.MILLISECONDS)
                     .readTimeout(10000L, TimeUnit.MILLISECONDS)
                     .retryOnConnectionFailure(true)
-
                     .build();
         } else {
             mHttpClient = okHttpClient;

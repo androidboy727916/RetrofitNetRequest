@@ -1,13 +1,13 @@
 package com.example.netrequestlibrary.bean;
 
 public class BaseRequestBean {
-    private int httpFlag;
+    private int actId;
 
-    public int getHttpFlag() {
-        return httpFlag;
+    public int getActId() {
+        return actId;
     }
 
-    public void setHttpFlag(int httpFlag) {
-        this.httpFlag = httpFlag;
+    public void setActId(int actId) {
+        this.actId = actId;
     }
 }

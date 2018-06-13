@@ -26,25 +26,24 @@ public class MainActivity extends AppCompatActivity implements RtResultCallbackL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RequestBean bean=new RequestBean();
-        bean.setActId(202);
-        bean.setMobile("15522222222");
-        bean.setPassword("qqqqqq");
-        bean.setHttpFlag(10000);
+        RequestBean bean=new RequestBean(202,"15522222222","qqqqqq");
 //        RtRequestHepler requestHepler = RtRequestHepler.getRequestHepler();//.setUserLoginHepler(bean,this);
-        RtRequestHepler.getRequestHepler().getRxAndroidConfig(requestApi.getUstLoginState(bean), new ProgressSubscriber<ResultStatusBean<UserBean>>(this, bean.getHttpFlag()));
+        RtRequestHepler.getRequestHepler().getRxAndroidConfig(MainActivity.this,true,requestApi.getUstLoginState(bean), new ProgressSubscriber<ResultStatusBean>(this, bean.getActId()));
 //        requestApi.getUstLoginState(requestBean), new ProgressSubscriber<ResultStatusBean<UserBean>>(callbackListener, requestBean.getHttpFlag())
 
     }
 
     @Override
     public void onCompleted(Object been, int httpFlag) {
-        ResultStatusBean<UserBean> userBeanResultStatusBean= (ResultStatusBean<UserBean>) been;
-        Log.e("hui","==="+userBeanResultStatusBean.toString());
+        onDestroyTag(Integer.valueOf(httpFlag));
+       ResultStatusBean resultStatusBean = (ResultStatusBean) been;
+//        Log.e("hui","==="+userBeanResultStatusBean.toString());
     }
 
     @Override
-    public void onErr(int httpFlag) {
+    public void onErr(String errorMsg, int httpFlag) {
 
     }
+
+
 }

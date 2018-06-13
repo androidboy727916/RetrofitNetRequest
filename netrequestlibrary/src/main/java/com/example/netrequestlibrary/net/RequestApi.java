@@ -19,7 +19,7 @@ public interface RequestApi {
     // 登录
     @Headers({"Content-Type: application/json", "Accept: application/json"})
     @POST("/thumbman/tm")
-    Observable<ResultStatusBean<UserBean>> getUstLoginState(@Body RequestBean body);
+    Observable<ResultStatusBean> getUstLoginState(@Body RequestBean body);
 
 
 

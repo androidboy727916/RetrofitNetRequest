@@ -2,6 +2,8 @@ package com.example.netrequestlibrary.net;
 
 
 
+import com.example.netrequestlibrary.bean.ResultStatusBean;
+
 import rx.Subscriber;
 
 /**
@@ -25,7 +27,7 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
     @Override
     public void onError(Throwable e) {
         if (mListener != null) {
-            mListener.onErr(mHttpFlag);
+            mListener.onErr( e.getMessage(),mHttpFlag);
         }
 //        Log.e("onError", "onError==" + e.getMessage());
 //        if (e instanceof SocketTimeoutException) {
@@ -35,13 +37,20 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
 //        } else {
 //            //  Toast.makeText(MyApplication.getAppContext(), "error:" + e.getMessage(), Toast.LENGTH_SHORT).show();
 //        }
-
     }
 
     @Override
     public void onNext(T t) {
+
         if (mListener != null) {
-            mListener.onCompleted(t, mHttpFlag);
+            ResultStatusBean resultStatusBean = (ResultStatusBean) t;
+            if(resultStatusBean.getCode() == 1){
+                mListener.onCompleted(t, mHttpFlag);
+            }else{
+                mListener.onErr( resultStatusBean.getErrMsg(),mHttpFlag);
+            }
+
+
         }
 
     }

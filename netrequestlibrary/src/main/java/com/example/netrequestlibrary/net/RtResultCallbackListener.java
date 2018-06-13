@@ -7,7 +7,7 @@ package com.example.netrequestlibrary.net;
 public interface RtResultCallbackListener<T> {
     public void onCompleted(T been, int httpFlag);
 
-    public void onErr(int httpFlag);
+    public void onErr(String errorMsg,int httpFlag);
 
 
 }
