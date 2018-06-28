@@ -47,7 +47,6 @@ public class RtRequestHepler {
     }
 
     public class SchedulerTransformer<T> implements Observable.Transformer<T, T> {
-
         @Override
         public Observable<T> call(Observable<T> tObservable) {
             return tObservable.subscribeOn(Schedulers.io())
