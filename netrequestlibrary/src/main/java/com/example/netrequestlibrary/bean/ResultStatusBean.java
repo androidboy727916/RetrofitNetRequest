@@ -1,9 +1,18 @@
 package com.example.netrequestlibrary.bean;
 
-public class ResultStatusBean<T> {
+public class ResultStatusBean<T,T1,T2> {
     private int code;
     private String errMsg;
     private T user;
+    private T1 hu;
+
+    public T1 getHu() {
+        return hu;
+    }
+
+    public void setHu(T1 hu) {
+        this.hu = hu;
+    }
 
     public int getCode() {
         return code;
@@ -35,6 +44,7 @@ public class ResultStatusBean<T> {
                 "code=" + code +
                 ", errMsg='" + errMsg + '\'' +
                 ", user=" + user +
+                ", hu="  +
                 '}';
     }
 }

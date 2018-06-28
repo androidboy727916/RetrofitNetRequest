@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity implements RtResultCallbackL
     @Override
     public void onCompleted(Object been, int httpFlag) {
         ResultStatusBean resultStatusBean = (ResultStatusBean) been;
-        Log.e("hui", "===" + resultStatusBean.toString());
+      UserBean u= (UserBean) resultStatusBean.getUser();
+        Log.e("hui", "===" +u.getId());
     }
 
     @Override
