@@ -1,17 +1,13 @@
 package com.example.netrequestlibrary.net;
 
 
-import android.app.Activity;
-
 import com.example.netrequestlibrary.Constants;
 import com.example.netrequestlibrary.bean.RequestBean;
 import com.example.netrequestlibrary.bean.ResultStatusBean;
 import com.example.netrequestlibrary.bean.UserBean;
 
-import okhttp3.RequestBody;
 import retrofit2.Retrofit;
 import rx.Observable;
-import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
@@ -43,26 +39,20 @@ public class RtRequestHepler {
         return mRequest;
     }
 
-//    /**
-//     * 登录
-//     */
-//    public synchronized void setUserLoginHepler(RequestBean requestBean, RtResultCallbackListener callbackListener) {
-//        getRxAndroidConfig(requestApi.getUstLoginState(requestBean), new ProgressSubscriber<ResultStatusBean<UserBean>>(callbackListener, requestBean.getHttpFlag()));
-//    }
-
-
-    private RequestBody setmRequest(String jsonStar) {
-        RequestBody body = RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"), jsonStar);
-        return body;
+    /**
+     * 登录
+     */
+    public synchronized void setUserLoginHepler(RequestBean requestBean, RtResultCallbackListener callbackListener) {
+        requestApi.getUstLoginState(requestBean).compose(new SchedulerTransformer<ResultStatusBean>()).subscribe(new ProgressSubscriber<ResultStatusBean>(callbackListener, requestBean.getHttpFlag()));
     }
 
-    public <T> void getRxAndroidConfig(Activity activity, boolean isShowLoading, Observable<T> observable, Subscriber<T> subscriber) {
-        if (isShowLoading) {
-//           TODO  展示loading
+    public class SchedulerTransformer<T> implements Observable.Transformer<T, T> {
+
+        @Override
+        public Observable<T> call(Observable<T> tObservable) {
+            return tObservable.subscribeOn(Schedulers.io())
+                    .unsubscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread());
         }
-        observable.subscribeOn(Schedulers.io())
-                .unsubscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(subscriber);
     }
 }

@@ -17,27 +17,23 @@ import com.example.netrequestlibrary.net.RtResultCallbackListener;
 public class MainActivity extends AppCompatActivity implements RtResultCallbackListener {
     private static RtRequestHepler mRequest;
 
-    private RequestApi requestApi = RetrofitUtil.getInstance().getRetrofit(Constants.Base_url).create(RequestApi.class);
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RequestBean bean=new RequestBean(202,"15522222222","qqqqqq");
-//        RtRequestHepler requestHepler = RtRequestHepler.getRequestHepler();//.setUserLoginHepler(bean,this);
-        RtRequestHepler.getRequestHepler().getRxAndroidConfig(MainActivity.this,true,requestApi.getUstLoginState(bean), new ProgressSubscriber<ResultStatusBean>(this, bean.getActId()));
+        RequestBean bean = new RequestBean(202, "15522222222", "qqqqqq");
+        RtRequestHepler.getRequestHepler().setUserLoginHepler(bean, this);
+
 //        requestApi.getUstLoginState(requestBean), new ProgressSubscriber<ResultStatusBean<UserBean>>(callbackListener, requestBean.getHttpFlag())
 
     }
 
     @Override
     public void onCompleted(Object been, int httpFlag) {
-        onDestroyTag(Integer.valueOf(httpFlag));
-       ResultStatusBean resultStatusBean = (ResultStatusBean) been;
-//        Log.e("hui","==="+userBeanResultStatusBean.toString());
+        ResultStatusBean resultStatusBean = (ResultStatusBean) been;
+        Log.e("hui", "===" + resultStatusBean.toString());
     }
 
     @Override
